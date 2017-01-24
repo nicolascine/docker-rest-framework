@@ -27,4 +27,7 @@ logs:
 migrate: build
 	docker-compose run web /usr/local/bin/python manage.py migrate
 
-.PHONY: all run build stop restart mac-open clean test logs migrate production-build
+statics: build
+	docker-compose run web /usr/local/bin/python manage.py collectstatic --clear
+
+.PHONY: all run build stop restart clean logs migrate statics
