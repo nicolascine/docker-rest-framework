@@ -27,6 +27,9 @@ logs:
 migrate: build
 	docker-compose run web /usr/local/bin/python manage.py migrate
 
+makemigrations: 
+	docker-compose run web /usr/local/bin/python manage.py makemigrations
+
 statics: build
 	docker-compose run web /usr/local/bin/python manage.py collectstatic --clear
 
