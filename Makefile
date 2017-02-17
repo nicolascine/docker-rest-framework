@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-all: build migrate run
+all: build migrate statics run
 
 run: build
 	docker-compose up
@@ -28,6 +28,6 @@ migrate: build
 	docker-compose run web /usr/local/bin/python manage.py migrate
 
 statics: build
-	docker-compose run web /usr/local/bin/python manage.py collectstatic --clear
+	docker-compose run web /usr/local/bin/python manage.py collectstatic --noinput
 
 .PHONY: all run build stop restart clean logs migrate statics
