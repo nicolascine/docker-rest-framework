@@ -1,4 +1,5 @@
 Django
+djangorestframework
+Pygments
 gunicorn
 psycopg2
-djangorestframework
